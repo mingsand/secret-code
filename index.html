@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>샌드위치 코드!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>암호화</h2>
+        <input type="text" class="ming" placeholder="암호화할 텍스트 입력">
+        <button onclick="mingHandler()">얍!</button>
+        <p id="mingResult"></p>
+
+        <hr>
+        
+
+        <h2>해석</h2>
+        <input type="text" class="miing" placeholder="암호화된 텍스트 입력">
+        
+        <button onclick="miingHandler()">얍!</button>
+        <p id="miingResult"></p>
+    </div>
+
+    <p>샌드위치 &lt 좀 멋있는 듯?</p>
+    <!-- &lt로 앵글 브라켓 표현하는 거 첨 앎-->
+
+    <script>
+        function 암호화(text) 
+        {
+            let mingg = '';
+            for (let i = 0; i < text.length; i++) {
+                let charCode = text.charCodeAt(i);
+                mingg += String.fromCharCode(charCode + 33); // 33을 더해 특수문자로 변환! 밍밍밍! 
+            }
+            return mingg;
+        }
+
+        function 암호해석(mingg) 
+        {
+            let minggg = '';
+            for (let i = 0; i < mingg.length; i++) {
+                let charCode = mingg.charCodeAt(i);
+                minggg += String.fromCharCode(charCode - 33); // 33을 빼서 원래 문자로 변환! (로직구현 2개 포함 1.5시간 걸림ㅋㅋ)
+            }
+            return minggg;
+        }
+
+        function mingHandler() 
+        {
+            let text = document.querySelector('.ming').value;
+            let mingg = 암호화(text);
+            document.getElementById('mingResult').innerText = `암호화된 텍스트: ${mingg}`;
+        }
+
+        function miingHandler() 
+        {
+            let text = document.querySelector('.miing').value;
+            let minggg = 암호해석(text);
+            document.getElementById('miingResult').innerText = `복호화된 텍스트: ${minggg}`;
+        }
+    </script>
+</body>
+</html>
+<!-- 변수명 제외하고 코드 겁나 깔끔하지 않음?ㅋㅋ -->
+
+
+
+
+
